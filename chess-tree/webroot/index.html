@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>chess Tree</title>
+  <link rel="stylesheet" href="./src/chessboard2.min.css">
+  <script src="./src/chessboard2.min.js"></script>
+  <script src="./src/chess.js"></script>
+    <style>
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 6px 6px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 6px;
+}
+    </style>
+</head>
+
+<body>
+
+
+
+
+<p>Chess Tree - Play any move that has not been played before.</p>
+  <div id="myBoard" style="width: 320px"></div>
+  <p id="gameStatus"></p>
+  
+  <div><span>Select a branch</span>
+    <input id="loadBranch1" type="radio" name="branch"  value="">start</radio>
+    <input id="loadBranch2" type="radio" name="branch"  value="">1.e4 e5</radio>
+    <input id="loadBranch3" type="radio" name="branch"  value="">1.e4 c5</radio>
+    <button id="createBranch" class="button" >Create Branch</button>
+  </div>
+  <div>
+    <br>
+    
+  </div>
+
+  <div style="display: none">
+    <h4>Game PGN:</h4>
+    <div id="gamePGN" style="font-family: monospace"></div>
+  <button onclick="showArrows()">Show Arrows</button>
+  <button onclick="loadBranch('')">loadBranch1</button>
+  <button onclick="loadBranch('1.e4 e5')">loadBranch2</button>
+  <button onclick="readRawPGN()">readRawPGN</button>
+  <button onclick="findMovesForPositions(game.pgn())">findMovesForPositions</button>
+  </div>
+  <script src="./src/Mikenas.js"></script>
+  <script src="./src/chessAI.js"></script>
+  <script src="./src/main.js"></script>
+  
+</body>
+
+</html>
